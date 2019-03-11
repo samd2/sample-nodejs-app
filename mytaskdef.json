@@ -1,0 +1,29 @@
+{
+        "containerDefinitions": [
+            {
+                "name": "sample-nodejs-app-container",
+                "image": "130932026351.dkr.ecr.eu-central-1.amazonaws.com/sample-nodejs-app:v_%BUILD_NUMBER%",
+                "cpu": 0,
+                "memoryReservation": 512,
+                "portMappings": [
+                    {
+                        "containerPort": 3000,
+                        "hostPort": 0,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [
+                    {
+                        "name": "NODE_ENV",
+                        "value": "production"
+                    }
+                ],
+                "mountPoints": [],
+                "volumesFrom": []
+            }
+        ],
+        "family": "sample-nodejs-app-task"
+}
+
+
